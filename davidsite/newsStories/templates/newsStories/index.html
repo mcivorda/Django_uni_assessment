@@ -4,12 +4,12 @@
 <html>
     <head>
         {% for article in latest_article_list %}
-        <h1><li><a href="/news/{{ NewsArticle.id }}/">{{ article.heading_text }}</a></li></h1>
+        <h1><li>{{ article.heading_text }}</li></h1>
     </head>
 
     <body>
-        <a href="/news/{{ NewsArticle.id }}/">{{ article.pub_date_time }}</a> <br>
-        <a href="/news/{{ NewsArticle.id }}/">{{ article.article_text }}</a>
+        {{ article.pub_date_time }} <br>
+        {{ article.article_text }} <br>
         {% endfor %}
     </body>
 {% else %}
