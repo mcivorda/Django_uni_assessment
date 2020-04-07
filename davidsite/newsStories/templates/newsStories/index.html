@@ -1,11 +1,18 @@
+<!DOCTYPE html>
+
 {% if latest_article_list %}
-    <ul>
-    {% for article in latest_article_list %}
+<html>
+    <head>
+        {% for article in latest_article_list %}
         <h1><li><a href="/news/{{ NewsArticle.id }}/">{{ article.heading_text }}</a></li></h1>
-        <li><a href="/news/{{ NewsArticle.id }}/">{{ article.pub_date_time }}</a></li>
-        <li><a href="/news/{{ NewsArticle.id }}/">{{ article.article_text }}</a></li>
-    {% endfor %}
-    </ul>
+    </head>
+
+    <body>
+        <a href="/news/{{ NewsArticle.id }}/">{{ article.pub_date_time }}</a> <br>
+        <a href="/news/{{ NewsArticle.id }}/">{{ article.article_text }}</a>
+        {% endfor %}
+    </body>
 {% else %}
     <p>No Articles are available.</p>
 {% endif %}
+</html>
