@@ -3,16 +3,18 @@
 {% if latest_article_list %}
 <html>
     <head>
-        {% for article in latest_article_list %}
-        <h1><li>{{ article.heading_text }}</li></h1>
+        <h1>Isolation News</h1>
     </head>
 
+
     <body>
+        {% for article in latest_article_list %}
+        <h2><li>{{ article.heading_text }}</li></h2>
         {{ article.pub_date_time }} <br>
         {{ article.article_text }} <br>
         {% endfor %}
-    </body>
 {% else %}
     <p>No Articles are available.</p>
 {% endif %}
+      </body>
 </html>
