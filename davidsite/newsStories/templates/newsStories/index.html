@@ -1,7 +1,9 @@
 {% if latest_article_list %}
     <ul>
     {% for article in latest_article_list %}
-        <li><a href="/news/{{ NewsArticle.id }}/">{{ article.heading_text }}</a></li>
+        <h1><li><a href="/news/{{ NewsArticle.id }}/">{{ article.heading_text }}</a></li></h1>
+        <li><a href="/news/{{ NewsArticle.id }}/">{{ article.pub_date_time }}</a></li>
+        <li><a href="/news/{{ NewsArticle.id }}/">{{ article.article_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
